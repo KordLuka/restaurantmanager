@@ -16,7 +16,7 @@ describe('RestaurantFeatureListComponent', () => {
     mockStore?.resetSelectors();
   });
 
-  it('should display a progress bar when restaurant list is fetching', () => {
+  it('should display a progress bar when restaurant list is fetchingg', () => {
     // given
     configureTestingModuleWithProvidedSelector([
       {

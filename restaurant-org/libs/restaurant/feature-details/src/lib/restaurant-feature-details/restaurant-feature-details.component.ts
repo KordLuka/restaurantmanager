@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
+import { ActivatedRoute } from '@angular/router';
+import { exhaustMap, map } from 'rxjs';
 @Component({
   selector: 'restaurant-org-restaurant-feature-details',
   standalone: true,

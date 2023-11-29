@@ -1,6 +1,6 @@
 import { Injectable, inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable, ReplaySubject, share } from 'rxjs';
+import { Observable, ReplaySubject, map, share } from 'rxjs';
 import { Customer } from '../entities/customer.model';
 
 @Injectable({ providedIn: 'root' })
@@ -16,5 +16,11 @@ export class CustomerRestService {
         .pipe(share({ connector: () => new ReplaySubject(1) }));
     }
     return this.getAllCache$;
+  }
+
+  public getOne(id: string): Observable<Customer | undefined> {
+    return this.httpClient
+      .get<Customer[]>('/assets/customers.json')
+      .pipe(map(resp => resp.find(item => item.id === id)));
   }
 }

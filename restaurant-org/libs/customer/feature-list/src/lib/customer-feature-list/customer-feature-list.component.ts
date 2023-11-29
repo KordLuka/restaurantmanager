@@ -7,7 +7,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { Customer } from 'libs/customer/data-access/src/lib/entities/customer.model';
-
+import { RouterModule } from '@angular/router';
 @Component({
   selector: 'restaurant-org-customer-feature-list',
   standalone: true,
@@ -20,6 +20,7 @@ import { Customer } from 'libs/customer/data-access/src/lib/entities/customer.mo
     MatTableModule,
     MatButtonModule,
     MatIconModule,
+    RouterModule,
   ],
   providers: [CustomerFacadeService],
   templateUrl: './customer-feature-list.component.html',

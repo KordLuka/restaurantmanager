@@ -1,0 +1,7 @@
+<ng-container
+  *ngIf="{
+    vm: customerVm$ | async,
+    id: id$ | async
+  } as vm">
+  <pre>{{ vm?.vm?.content | json }}</pre>
+</ng-container>

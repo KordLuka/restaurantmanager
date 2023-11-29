@@ -7,7 +7,7 @@ import { tap } from 'rxjs';
 import { TranslateModule } from '@ngx-translate/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
-import { Router } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 @Component({
   selector: 'restaurant-org-restaurant-feature-list',
   standalone: true,
@@ -19,6 +19,7 @@ import { Router } from '@angular/router';
     MatButtonModule,
     MatIconModule,
     TableLayoutComponent,
+    RouterModule,
   ],
   providers: [],
   templateUrl: './restaurant-feature-list.component.html',
