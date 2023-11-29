@@ -1,0 +1,7 @@
+{
+  "extends": "./tsconfig.json",
+  "include": ["src/**/*.ts", "../../libs/+state/src/lib/restaurant/restaurant.actions.ts", "../../libs/+state/src/lib/restaurant/restaurant.effects.spec.ts", "../../libs/+state/src/lib/restaurant/restaurant.effects.ts", "../../libs/+state/src/lib/restaurant/restaurant.facade.spec.ts", "../../libs/+state/src/lib/restaurant/restaurant.facade.ts", "../../libs/+state/src/lib/restaurant/restaurant.models.ts", "../../libs/+state/src/lib/restaurant/restaurant.reducer.spec.ts", "../../libs/+state/src/lib/restaurant/restaurant.reducer.ts", "../../libs/+state/src/lib/restaurant/restaurant.selectors.spec.ts", "../../libs/+state/src/lib/restaurant/restaurant.selectors.ts"],
+  "compilerOptions": {
+    "types": ["jest", "node"]
+  }
+}

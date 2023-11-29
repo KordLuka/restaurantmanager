@@ -1,0 +1,75 @@
+<!-- <ng-container *ngIf="vm$ | async as vm">
+  
+</ng-container>
+
+
+
+<ng-template #emptyTemplate>
+  <p>No data</p>
+</ng-template> -->
+
+<ng-container *ngIf="vm$ | async as vm">
+  <restaurant-org-table-layout
+    [isLoading]="!!vm?.isLoading"
+    [error]="vm?.error"
+    (refresh)="handleRefresh()">
+    <div menu>
+      <button
+        mat-icon-button
+        [disabled]="!!vm?.isLoading"
+        (click)="handleAdd()"
+        data-testid="customer-feature-list-add-restaurant">
+        <mat-icon>add</mat-icon>
+      </button>
+    </div>
+    <table
+      class="border border-gray-400"
+      mat-table
+      [dataSource]="vm?.content!"
+      content>
+      <ng-container matColumnDef="firstName">
+        <th
+          mat-header-cell
+          *matHeaderCellDef
+          data-testid="customer-feature-list-firstName-col">
+          First name
+        </th>
+        <td mat-cell *matCellDef="let element">{{ element.firstName }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="lastName">
+        <th
+          mat-header-cell
+          *matHeaderCellDef
+          data-testid="customer-feature-list-lastName-col">
+          Last name
+        </th>
+        <td mat-cell *matCellDef="let element">{{ element.lastName }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="phoneNumber">
+        <th
+          mat-header-cell
+          *matHeaderCellDef
+          data-testid="customer-feature-list-phoneNumber-col">
+          Created on
+        </th>
+        <td mat-cell *matCellDef="let element">{{ element.phoneNumber }}</td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr
+        mat-row
+        *matRowDef="let row; columns: displayedColumns"
+        data-testid="customer-feature-list-row"></tr>
+      <tr
+        class="mat-row"
+        *matNoDataRow
+        data-testid="customer-feature-list-empty-row">
+        <td [attr.colspan]="displayedColumns.length" class="pt-4 text-center">
+          {{ 'EMPTY_ROW' | translate }}
+        </td>
+      </tr>
+    </table>
+  </restaurant-org-table-layout>
+</ng-container>

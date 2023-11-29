@@ -1,0 +1,48 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "rootDir": ".",
+    "sourceMap": true,
+    "declaration": false,
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "esnext",
+    "lib": ["es2020", "dom"],
+    "skipLibCheck": true,
+    "skipDefaultLibCheck": true,
+    "baseUrl": ".",
+    "paths": {
+      "@restaurant-org/customer-data-access": [
+        "libs/customer/data-access/src/index.ts"
+      ],
+      "@restaurant-org/customer-feature-list": [
+        "libs/customer/feature-list/src/index.ts"
+      ],
+      "@restaurant-org/feature-create-edit": [
+        "libs/restaurant/feature-create-edit/src/index.ts"
+      ],
+      "@restaurant-org/restaurant-feature-core": [
+        "libs/restaurant/core/src/index.ts"
+      ],
+      "@restaurant-org/restaurant-feature-data-access": [
+        "libs/restaurant/data-access/src/index.ts"
+      ],
+      "@restaurant-org/restaurant-feature-details": [
+        "libs/restaurant/feature-details/src/index.ts"
+      ],
+      "@restaurant-org/restaurant-feature-list": [
+        "libs/restaurant/feature-list/src/index.ts"
+      ],
+      "@restaurant-org/restaurant-m-ui": ["libs/restaurant/ui/src/index.ts"],
+      "@restaurant-org/shared-entities": ["libs/shared/entities/src/index.ts"],
+      "@restaurant-org/shared-ui": ["libs/shared/ui/src/index.ts"],
+      "@restaurant-org/shared-util": ["libs/shared/util/src/index.ts"],
+      "@restaurant-org/state": ["libs/+state/src/index.ts"]
+    }
+  },
+  "exclude": ["node_modules", "tmp"],
+  "include": ["**/*.ts"]
+}

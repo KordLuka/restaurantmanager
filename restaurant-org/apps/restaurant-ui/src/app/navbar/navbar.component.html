@@ -1,0 +1,37 @@
+<nav class="bg-white border-b border-gray-100">
+  <div class="max-w-screen-xl mx-auto flex flex-wrap items-center justify-between p-4 px-8">
+    <a href="/">
+      <span class="self-center text-2xl font-semibold whitespace-nowrap"
+        >Restaurant</span
+      >
+    </a>
+
+    <ul
+      class="font-medium flex items-center gap-x-4 mr-auto"
+      *ngFor="let config of routingConfigs"
+    >
+      <ng-container *ngFor="let route of config.routes">
+        <ng-container *ngIf="!route.hide">
+          <div
+            [routerLink]="[config.domain, route.path]"
+            [routerLinkActive]="[config.domain, route.path ?? '']"
+            #rl="routerLinkActive"
+            class="py-2 px-3 rounded cursor-pointer"
+            [ngClass]="rl.isActive ? 'text-blue-500' : ''"
+          >
+            <i [class]="'mr-2 fa-solid fa-' + route.icon"></i>
+            {{ route.label }}
+          </div>
+        </ng-container>
+      </ng-container>
+    </ul>
+
+    <button
+      mat-icon-button
+      matTooltip="Basic"
+      aria-label="Example icon-button with a heart icon"
+    >
+      <mat-icon>favorite</mat-icon>
+    </button>
+  </div>
+</nav>
